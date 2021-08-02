@@ -1,0 +1,7 @@
+{
+  "name": "ionicLapTimer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

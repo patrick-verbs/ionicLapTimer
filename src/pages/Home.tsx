@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <Timer/>
+        <Timer />
       </IonContent>
     </IonPage>
   );

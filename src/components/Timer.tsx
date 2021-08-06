@@ -21,16 +21,11 @@ const Timer: React.FC = () => {
     : (setIsRunning(true), setButtonText(["Pause", "Lap"]))
   )
 
-  let lapTimesReadoutString = ``
-  for (let i = 1; i < lapTimes.length; i++) {
-    lapTimesReadoutString += `${lapTimes[i]}<br></br>`
-  }
-
   const resetOrLap = () => (
     isRunning
     ? (
       lapTimes.push(ms - lapTimes.reduce((accumulator, currentValue) => accumulator + currentValue, 0)),
-      setLapTimes(lapTimes), console.log(lapTimes)
+      setLapTimes(lapTimes)
     )
     : (
       setMs(0),
@@ -46,7 +41,7 @@ const Timer: React.FC = () => {
       <IonCard>
         <IonList>
           {lapTimes.map((lapTime, index)=>{
-            return <IonItem key={index}><IonLabel>{lapTime}</IonLabel></IonItem>
+            return (index !== 0) ? <IonItem key={index}><IonLabel>{lapTime}</IonLabel></IonItem> : undefined
           })}
         </IonList>
       </IonCard>
